@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+ <input type="text" id="query" oniput="debouncing(main,1000)">
+</body>
+</html>
+
+<!-- get the data -->
+<!-- return data -->
+<!-- catching inide main function async -->
+<!-- appen funtion data -->
+<!-- append main -->
+
+
+<script>
+    
+
+    async function getData() {
+        let query=document.getElementById("query").value;
+        let url=`efgh`
+        let res=await fetch(url);
+        let data = await res.json();
+        console.log(data);
+    append(data.results)
+        return data.results;
+    }
+   
+    function appendData(data) {
+        let container=document.getElementById("results")
+        container.innerHTML=null;
+
+        data.forEach(function(el){
+     let p=document.createElement("p")
+     p.innerText=el.name,
+     container.append(p)
+
+        })
+    }
+
+    async function main(){
+        let data=await getData();
+        appendData(data);
+    }
+
+  function debouncing(func,delay){
+    if(id){
+      clearTimeout(id);
+
+  }
+  id=setTimeout(function(){
+      fun();
+  },delay);
+  
+}
+  
+
+
+
+</script>
